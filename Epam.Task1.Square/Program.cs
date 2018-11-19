@@ -8,23 +8,31 @@ namespace Epam.Task1.Square
 {
     class Program
     {
-        public void Square(int N)
+        public static void Square(int n)
         {
             int i = 0;
-            while (i != N)
+            while (i != n)
             {
-                if (i == N / 2)
+                if (i == n / 2)
                 {
-                    for (int j = 0; j != N; j++)
+                    for (int j = 0; j != n; j++)
                     {
-                        if (j == N / 2) Console.Write(' ');
-                        else Console.Write('*');
+                        if (j == n / 2)
+                        {
+                            Console.Write(' ');
+                        }
+                        else
+                        {
+                            Console.Write('*');
+                        }
                     }
                 }
                 else
                 {
-                    for (int j = 0; j != N; j++)
+                    for (int j = 0; j != n; j++)
+                    {
                         Console.Write('*');
+                    }
                 }
                 Console.Write("\n");
                 i++;
@@ -33,10 +41,16 @@ namespace Epam.Task1.Square
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите N");
-            int N = Int32.Parse(Console.ReadLine());
-            Program program = new Program();
-            program.Square(N);
+            Console.Write("Print a positive odd number n = ");
+            int n;
+            if (int.TryParse(Console.ReadLine(), out n) && n > 0 && n % 2 == 1)
+            {
+                Square(n);
+            }
+            else
+            {
+                Console.WriteLine("Wrong input, n should be a positive odd number");
+            }
         }
     }
 }

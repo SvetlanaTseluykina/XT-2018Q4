@@ -6,25 +6,29 @@ using System.Threading.Tasks;
 
 namespace Epam.Task1.Sequence
 {
-    class Program
+    public class Program
     {
-        public string Seq(int N)
+        public static void Seq(int n)
         {
-            string str = "";
-            for (int i = 1; i != N; i++)
+            for (int i = 1; i != n; i++)
             {
-                str += i + "," + " ";
+                Console.Write(i + "," + " ");
             }
-            str += N;
-            return str;
+            Console.WriteLine(n);
         }
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите N");
-            int N = Int32.Parse(Console.ReadLine());
-            Program program = new Program();
-            Console.WriteLine(program.Seq(N));
+            Console.Write("Print a positive number n = ");
+            int n;
+            if (int.TryParse(Console.ReadLine(), out n) && n > 0)
+            {
+                Seq(n);
+            }
+            else
+            {
+                Console.WriteLine("Wrong input, n should be a positive number");
+            }
         }
     }
 }

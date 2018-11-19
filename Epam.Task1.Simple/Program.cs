@@ -6,33 +6,45 @@ using System.Threading.Tasks;
 
 namespace Epam.Task1.Simple
 {
-    class Program
+    public class Program
     {
-        public void Simple(int N)
+        public static void Simple(int n)
         {
-            if (N == 1 || N == 2)
+            if (n == 1 || n == 2)
             {
-                Console.WriteLine("Число не является простым");
+                Console.WriteLine("The number isn't simple");
                 return;
             }
             bool fl = false;
-            for (int i = 2; i != N; i++)
+            for (int i = 2; i <= Math.Sqrt(n); i++)
             {
-                if (N % i == 0)
+                if (n % i == 0)
                 {
                     fl = true;
                     break;
                 }
             }
-            if (fl) Console.WriteLine("Число не является простым");
-            else Console.WriteLine("Число является простым");
+            if (fl)
+            {
+                Console.WriteLine("The number isn't simple");
+            }
+            else
+            {
+                Console.WriteLine("The number is simple");
+            }
         }
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите N");
-            int N = Int32.Parse(Console.ReadLine());
-            Program program = new Program();
-            program.Simple(N);
+            Console.Write("Print a positive number n = ");
+            int n;
+            if (int.TryParse(Console.ReadLine(), out n) && n > 0)
+            {
+                Simple(n);
+            }
+            else
+            {
+                Console.WriteLine("Wrong input, n should be a positive number");
+            }
         }
     }
 }
