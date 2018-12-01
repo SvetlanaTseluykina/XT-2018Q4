@@ -21,7 +21,7 @@ namespace Epam.Task2.AverageStringLength
                 {
                     countLetters++;
                 }
-                else if (char.IsPunctuation(str[i]) && i != str.Length - 1 && str[i + 1] == ' ' ) 
+                else if (char.IsPunctuation(str[i]) && i != str.Length - 1 && str[i + 1] == ' ') 
                 {
                     countWords++;
                     i++;
@@ -35,11 +35,13 @@ namespace Epam.Task2.AverageStringLength
                     countWords++;
                 }
             }
+
             countWords++;
             int length = countLetters / countWords;
             Console.WriteLine("The average word length in the string = " + length);
         }
-        static void Main(string[] args)
+
+        public static void Main(string[] args)
         {
             AverStrLen();
         }

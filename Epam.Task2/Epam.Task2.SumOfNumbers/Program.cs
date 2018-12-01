@@ -18,9 +18,11 @@ namespace Epam.Task2.SumOfNumbers
                     sum += i;
                 }
             }
+
             Console.WriteLine("summa = " + sum);
         }
-        static void Main(string[] args)
+
+        public static void Main(string[] args)
         {
             SumOfNumbers();
         }

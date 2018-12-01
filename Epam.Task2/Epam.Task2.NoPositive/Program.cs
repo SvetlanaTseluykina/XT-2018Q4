@@ -17,17 +17,18 @@ namespace Epam.Task2.NoPositive
                 if (int.TryParse(Console.ReadLine(), out n) && n > 0 && n < 6)
                 {
                     Random random = new Random();
-                    int[,,] arr = new int[n,n,n];
+                    int[,,] arr = new int[n, n, n];
                     for (int i = 0; i < arr.GetLength(0); i++)
                     {
                         for (int j = 0; j < arr.GetLength(1); j++)
                         {
                             for (int k = 0; k < arr.GetLength(2); k++)
                             {
-                                arr[i,j,k] = random.Next(-10, 10);
+                                arr[i, j, k] = random.Next(-10, 10);
                             }
                         }
                     }
+
                     Console.WriteLine("Initial 3D array:");
                     for (int i = 0; i < arr.GetLength(0); i++)
                     {
@@ -37,10 +38,13 @@ namespace Epam.Task2.NoPositive
                             {
                                 Console.Write(arr[i, j, k] + " ");
                             }
+
                             Console.WriteLine();
                         }
+
                         Console.WriteLine();
                     }
+
                     for (int i = 0; i < arr.GetLength(0); i++)
                     {
                         for (int j = 0; j < arr.GetLength(1); j++)
@@ -54,6 +58,7 @@ namespace Epam.Task2.NoPositive
                             }
                         }
                     }
+
                     Console.WriteLine("Changed 3D array:");
                     for (int i = 0; i < arr.GetLength(0); i++)
                     {
@@ -63,10 +68,13 @@ namespace Epam.Task2.NoPositive
                             {
                                 Console.Write(arr[i, j, k] + " ");
                             }
+
                             Console.WriteLine();
                         }
+
                         Console.WriteLine();
                     }
+
                     Console.WriteLine();
                     break;
                 }
@@ -76,7 +84,8 @@ namespace Epam.Task2.NoPositive
                 }
             }
         }
-        static void Main(string[] args)
+
+        public static void Main(string[] args)
         {
             NoPositive();
         }

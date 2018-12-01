@@ -6,26 +6,32 @@ using System.Threading.Tasks;
 
 namespace Epam.Task2.X_masTree
 {
-    class Program
+    public class Program
     {
-        public static void XmasTree(ref int n)
+        public static void XmasTree(int n)
         {
-            for (int count = 0; count != n; count++){
+            const char Asterics = '*';
+            const char Space = ' ';
+            for (int count = 0; count != n; count++)
+            {
                 for (int i = 0; i <= count; i++)
                 {
                     for (int k = 0; k < (n - i - 1); k++)
                     {
-                        Console.Write(" ");
+                        Console.Write(Space);
                     }
-                    for (int j = 0; j < (i * 2 + 1); j++)
+
+                    for (int j = 0; j < ((i * 2) + 1); j++)
                     {
-                        Console.Write('*');
+                        Console.Write(Asterics);
                     }
+
                     Console.WriteLine();
                 }
             }
         }
-        static void Main(string[] args)
+
+        public static void Main(string[] args)
         {
             while (true)
             {
@@ -33,7 +39,7 @@ namespace Epam.Task2.X_masTree
                 Console.Write("Print a positive integer number n = ");
                 if (int.TryParse(Console.ReadLine(), out n) && n > 0)
                 {
-                   XmasTree(ref n);
+                   XmasTree(n);
                     break;
                 }
                 else

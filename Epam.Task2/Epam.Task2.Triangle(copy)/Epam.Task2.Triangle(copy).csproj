@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{33A1E1BD-6CD7-4C74-959E-08A3A6192407}</ProjectGuid>
+    <ProjectGuid>{CC73F139-7B8F-42CF-BEC2-8068AC1F99C0}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Epam.Task2.FontAdjustment</RootNamespace>
-    <AssemblyName>Epam.Task2.FontAdjustment</AssemblyName>
+    <RootNamespace>Epam.Task2.Triangle_copy_</RootNamespace>
+    <AssemblyName>Epam.Task2.Triangle%28copy%29</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

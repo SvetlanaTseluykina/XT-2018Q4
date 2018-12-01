@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Epam.Task2.CharDoubler
 {
-    class Program
+    public class Program
     {
         public static void CharDoubler()
         {
@@ -29,12 +29,14 @@ namespace Epam.Task2.CharDoubler
                             break;
                         }
                     }
+
                     if (!fl)
                     {
                         sb.Append(str1[j]);
                     }
                 }
             }
+
             for (int i = 0; i != sb.Length; i++)
             {
                 for (int j = 0; j != strb.Length; j++)
@@ -46,9 +48,11 @@ namespace Epam.Task2.CharDoubler
                     }
                 }
             }
+
             Console.WriteLine(strb);
         }
-        static void Main(string[] args)
+
+        public static void Main(string[] args)
         {
             CharDoubler();
         }

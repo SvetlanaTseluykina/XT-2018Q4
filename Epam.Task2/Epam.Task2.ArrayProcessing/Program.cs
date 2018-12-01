@@ -24,20 +24,23 @@ namespace Epam.Task2.ArrayProcessing
                         arr[i] = random.Next(100);
                         Console.Write(arr[i] + " ");
                     }
+
                     Console.WriteLine();
-                    int max = Int32.MinValue;
-                    int min = Int32.MaxValue;
+                    int max = int.MinValue;
+                    int min = int.MaxValue;
                     for (int i = 0; i < arr.Length; i++)
                     {
                         if (arr[i] > max)
                         {
                             max = arr[i];
                         }
+
                         if (arr[i] < min)
                         {
                             min = arr[i];
                         }
                     }
+
                     for (int i = 1; i <= arr.Length - 1; i++)
                     {
                         int j = i;
@@ -49,12 +52,14 @@ namespace Epam.Task2.ArrayProcessing
                             j--;
                         }
                     }
-                    Console.WriteLine("max = " + max + " min = " + min);
+
+                    Console.WriteLine("max = {0}, min = {1}", max, min);
                     Console.Write("Sorted array: ");
                     for (int i = 0; i < arr.Length; i++)
                     {
                         Console.Write(arr[i] + " ");
                     }
+
                     Console.WriteLine();
                     break;
                 }
@@ -64,7 +69,8 @@ namespace Epam.Task2.ArrayProcessing
                 }
             }
         }
-        static void Main(string[] args)
+
+        public static void Main(string[] args)
         {
             ArrayProcessing();
         }

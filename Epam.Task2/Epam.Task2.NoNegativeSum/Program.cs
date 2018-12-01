@@ -24,6 +24,7 @@ namespace Epam.Task2.NoNegativeSum
                         arr[i] = random.Next(-100, 100);
                         Console.Write(arr[i] + " ");
                     }
+
                     Console.WriteLine();
                     int sum = 0;
                     for (int i = 0; i < arr.Length; i++)
@@ -33,6 +34,7 @@ namespace Epam.Task2.NoNegativeSum
                             sum += arr[i];
                         }
                     }
+
                     Console.WriteLine("Summa non-negative numbers = " + sum);
                     break;
                 }
@@ -42,7 +44,8 @@ namespace Epam.Task2.NoNegativeSum
                 }
             }
         }
-        static void Main(string[] args)
+
+        public static void Main(string[] args)
         {
             NoNegSum();
         }

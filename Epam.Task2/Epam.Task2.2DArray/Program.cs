@@ -25,8 +25,10 @@ namespace Epam.Task2._2DArray
                             arr[i, j] = random.Next(10);
                             Console.Write(arr[i, j] + " ");
                         }
+
                         Console.WriteLine();
                     }
+
                     int sum = 0;
                     for (int i = 0; i < arr.GetLength(0); i++)
                     {
@@ -38,6 +40,7 @@ namespace Epam.Task2._2DArray
                             }
                         }
                     }
+
                     Console.WriteLine("sum = " + sum);
                     break;
                 }
@@ -47,7 +50,8 @@ namespace Epam.Task2._2DArray
                 }
             }
         }
-        static void Main(string[] args)
+
+        public static void Main(string[] args)
         {
             TwoDimArray();
         }
