@@ -29,7 +29,13 @@ namespace Epam.Task4.DynamicArrayHardcoreMode
                 throw new ArgumentNullException("Error! Argument is null!");
             }
 
-            this.array = new T[(collection as ICollection).Count];
+            int countCollection = 0;
+            foreach (var item in collection)
+            {
+                countCollection++;
+            }
+
+            this.array = new T[countCollection];
         }
 
         public int Capacity
@@ -81,23 +87,26 @@ namespace Epam.Task4.DynamicArrayHardcoreMode
                 throw new ArgumentNullException("Error! Argument is null!");
             }
 
+            int countNum = 0;
             if (this.array.Length == this.count)
             {
                 Array.Resize(ref this.array, this.array.Length * 2);
-                foreach (T item in collection)
+                foreach (var item in collection)
                 {
-                    (collection as ICollection).CopyTo(this.array, 0);
+                    this.array.SetValue(item, countNum);
+                    countNum++;
                 }
             }
             else
             {
-                foreach (T item in collection)
+                foreach (var item in collection)
                 {
-                    (collection as ICollection).CopyTo(this.array, 0);
+                    this.array.SetValue(item, countNum);
+                    countNum++;
                 }
             }
 
-            this.count = (collection as ICollection).Count;
+            this.count = countNum;
         }
 
         public bool Remove(T item)

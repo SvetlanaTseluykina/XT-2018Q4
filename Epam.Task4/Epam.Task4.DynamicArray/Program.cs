@@ -22,11 +22,6 @@ namespace Epam.Task4.DynamicArray
             }
 
             DynamicArray<int> dynamicArray2 = new DynamicArray<int>(length);
-            Stack<int> stack = new Stack<int>();
-            stack.Push(1);
-            stack.Push(2);
-            stack.Push(3);
-            stack.Push(4);
             for (int i = 0; i < dynamicArray1.Capacity; i++)
             {
                 dynamicArray1.Add(i + 1);
@@ -68,6 +63,11 @@ namespace Epam.Task4.DynamicArray
             Console.WriteLine("Capacity of the second array: {0}", dynamicArray2.Capacity);
             Console.WriteLine("Length of the first array: {0}", dynamicArray1.Length);
             Console.WriteLine("Length of the second array: {0}", dynamicArray2.Length);
+            Stack<int> stack = new Stack<int>();
+            stack.Push(1);
+            stack.Push(2);
+            stack.Push(3);
+            stack.Push(4);
             try
             {
                 DynamicArray<int> dynamicArray3 = new DynamicArray<int>(stack);
