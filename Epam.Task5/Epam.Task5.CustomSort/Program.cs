@@ -10,6 +10,11 @@ namespace Epam.Task5.CustomSort
     { 
         public static void QuickSort<T>(List<T> array, int left, int right, Func<T, T, int> func)
         {
+            if (func == null)
+            {
+                throw new ArgumentNullException();
+            }
+
             int i = left;
             int j = right;
             int pivot = (i + j) / 2;
@@ -74,13 +79,20 @@ namespace Epam.Task5.CustomSort
             int left = 0;
             int right = list.Count() - 1;
             Func<int, int, int> func = СompareElements;
-            QuickSort(list, left, right, func);
-            foreach (var item in list)
+            try
             {
-                Console.Write("{0} ", item);
-            }
+                QuickSort(list, left, right, func);
+                foreach (var item in list)
+                {
+                    Console.Write("{0} ", item);
+                }
 
-            Console.WriteLine();
+                Console.WriteLine();
+            }
+            catch(ArgumentNullException)
+            {
+                Console.WriteLine("Argument was null");
+            }
         }
     }
 }

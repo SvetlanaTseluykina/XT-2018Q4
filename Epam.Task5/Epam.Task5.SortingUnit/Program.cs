@@ -18,13 +18,20 @@ namespace Epam.Task5.SortingUnit
             int left = 0;
             int right = list.Count() - 1;
             Func<string, string, int> func = sortingUnit.CompareString;
-            sortingUnit.NewThread(list, left, right, func);
-            for (int i = 0; i < list.Count; i++)
+            try
             {
-                Console.Write("{0} ", list[i]);
-            }
+                sortingUnit.NewThread(list, left, right, func);
+                for (int i = 0; i < list.Count; i++)
+                {
+                    Console.Write("{0} ", list[i]);
+                }
 
-            Console.WriteLine();
+                Console.WriteLine();
+            }
+            catch(ArgumentNullException)
+            {
+                Console.WriteLine("Argument was null");
+            }
         }
     }
 }
