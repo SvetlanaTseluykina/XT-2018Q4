@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Epam.Task3.User
+namespace Epam.Task3.UserCopy
 {
-   public class User
+    public class User
     {
         private string surname;
         private string name;
@@ -14,13 +14,12 @@ namespace Epam.Task3.User
         private System.DateTime dateOfBirth;
         private int age;
 
-        public User(string surname, string name, string patronymic, int year, int month, int day, int age)
+        public User(string surname, string name, string patronymic, int year, int month, int day)
         {
             this.surname = surname;
             this.name = name;
             this.patronymic = patronymic;
             this.dateOfBirth = new DateTime(year, month, day);
-            this.age = age;
         }
 
         public string Surname
@@ -55,13 +54,23 @@ namespace Epam.Task3.User
             }
         }
 
+        public int Age
+        {
+            get
+            {
+                return this.age;
+            }
+
+            set
+            {
+                this.age = value;
+            }
+        }
+
         public string GetPatronimyc
             => this.patronymic;
 
         public System.DateTime GetDateOfBirth
             => this.dateOfBirth.Date;
-
-        public int GetAge
-            => this.age;
     }
 }
